@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Capyture - A calm capybara of a tab recorder</title>
+  <meta name="description" content="Capyture records browser tabs to MP4 with live volume meters, crash-safe storage, optional meeting archive and Google Drive upload. Everything stays on your device." />
+  <link rel="icon" href="assets/capy-128.png" />
+  <style>
+    :root {
+      --bg: #18181c; --card: #232329; --border: #32323a;
+      --text: #e7e7ec; --dim: #9a9aa4; --accent: #e53935; --capy: #b08968;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; font-family: 'Segoe UI', 'Noto Sans TC', system-ui, sans-serif;
+      background: var(--bg); color: var(--text); line-height: 1.7;
+    }
+    .wrap { max-width: 880px; margin: 0 auto; padding: 56px 24px 80px; }
+    header { text-align: center; margin-bottom: 56px; }
+    header img { width: 110px; height: 110px; border-radius: 26px; }
+    h1 { font-size: 44px; margin: 18px 0 8px; letter-spacing: 0.5px; }
+    .tagline { color: var(--dim); font-size: 19px; margin: 0 0 6px; }
+    .sub { color: var(--capy); font-size: 15px; }
+    .links { margin-top: 28px; display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+    .btn {
+      display: inline-block; padding: 11px 22px; border-radius: 10px;
+      text-decoration: none; font-size: 15px; font-weight: 600;
+    }
+    .btn.primary { background: var(--accent); color: #fff; }
+    .btn.ghost { border: 1px solid var(--border); color: var(--text); }
+    .btn:hover { filter: brightness(1.12); }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; }
+    .card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 14px; padding: 22px;
+    }
+    .card h3 { margin: 0 0 8px; font-size: 17px; }
+    .card h3 img { width: 18px; height: 18px; vertical-align: -3px; margin-right: 7px; }
+    .card p { margin: 0; color: var(--dim); font-size: 14.5px; }
+    section { margin-top: 48px; }
+    section > p { color: var(--dim); font-size: 15.5px; }
+    section > p code { background: var(--card); border: 1px solid var(--border); border-radius: 5px; padding: 1px 6px; font-size: 13.5px; color: var(--capy); }
+    h2 { font-size: 24px; border-bottom: 1px solid var(--border); padding-bottom: 10px; }
+    footer {
+      margin-top: 72px; padding-top: 22px; border-top: 1px solid var(--border);
+      color: var(--dim); font-size: 13.5px; text-align: center;
+    }
+    footer a { color: var(--capy); }
+    .privacy-note {
+      background: var(--card); border: 1px solid var(--capy); border-radius: 14px;
+      padding: 20px 24px; margin-top: 20px; font-size: 15px;
+    }
+    .privacy-note a { color: var(--capy); }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <img src="assets/capy-128.png" alt="Capyture logo" />
+      <h1>Capyture</h1>
+      <p class="tagline">A calm capybara of a tab recorder</p>
+      <p class="sub">MP4 output &middot; Meeting archive &middot; Google Drive upload &middot; Flat memory &middot; 8 languages</p>
+      <div class="links">
+        <a class="btn primary" href="https://github.com/deadline314/Capyture" rel="noopener">View on GitHub</a>
+        <a class="btn ghost" href="privacy.html">Privacy Policy</a>
+      </div>
+    </header>
+
+    <section>
+      <h2>What is Capyture</h2>
+      <p>
+        Capyture is a Google Chrome browser extension that records the audio and video of a browser tab
+        and saves it as a video file (MP4 by default) on your computer. It is built for everyday screen
+        recording such as online meetings, lectures, demos and tutorials. Recordings are processed and
+        stored entirely on your own device.
+      </p>
+      <p>
+        Optionally, you can connect your own Google account to have finished recordings uploaded to your
+        Google Drive. This feature is off by default. When enabled, Capyture uses the minimal
+        <code>drive.file</code> OAuth scope, which only allows it to create files and folders of its own
+        in your Drive; it can never read, change or delete any other file in your account. Uploads go
+        directly from your browser to Google Drive, and the developer never receives your files, tokens
+        or any personal data.
+      </p>
+    </section>
+
+    <section>
+      <h2>Features</h2>
+      <div class="grid">
+        <div class="card">
+          <h3><img src="assets/capy-head.png" alt="" />MP4 that just works</h3>
+          <p>H.264 + AAC by default, so recordings open directly in video editors and share cleanly in chat apps. HEVC, VP9, VP8 and AV1 available as options.</p>
+        </div>
+        <div class="card">
+          <h3><img src="assets/capy-head.png" alt="" />Flat memory</h3>
+          <p>Video streams to disk while recording. Multi-hour sessions stay light even on modest machines.</p>
+        </div>
+        <div class="card">
+          <h3><img src="assets/capy-head.png" alt="" />Crash-safe</h3>
+          <p>Auto-stop and save when the tab closes. After a browser crash, a rescue banner restores your unsaved recording.</p>
+        </div>
+        <div class="card">
+          <h3><img src="assets/capy-head.png" alt="" />Live audio meters</h3>
+          <p>Volume bars for tab audio and microphone before and during recording, plus a guard against silent recordings.</p>
+        </div>
+        <div class="card">
+          <h3><img src="assets/capy-head.png" alt="" />Meeting workflow</h3>
+          <p>Optional reminders on meeting pages, per-project archive folders, and resumable Google Drive upload. Off by default.</p>
+        </div>
+        <div class="card">
+          <h3><img src="assets/capy-head.png" alt="" />Yours to theme</h3>
+          <p>Six themes including a very cute capybara, three font sizes, and an interface in eight languages.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Privacy in one sentence</h2>
+      <div class="privacy-note">
+        Everything stays on your device: no servers, no tracking, no analytics. The only network traffic is the optional Google Drive upload you enable yourself, sent directly to your own Drive with the minimal drive.file scope. Read the full <a href="privacy.html">Privacy Policy</a>.
+      </div>
+    </section>
+
+    <footer>
+      Capyture &middot; <a href="https://github.com/deadline314/Capyture">GitHub</a> &middot;
+      <a href="https://github.com/deadline314/Capyture/issues">Support</a> &middot;
+      <a href="privacy.html">Privacy Policy</a>
+    </footer>
+  </div>
+</body>
+</html>
